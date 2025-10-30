@@ -23,7 +23,6 @@
 #endif
 
 // version definitions
-#define CDPCFG_WIFI_NONE
 #define CDP_VERSION_MAJOR  4
 #define CDP_VERSION_MINOR  4
 #define CDP_VERSION_PATCH  0
@@ -103,6 +102,14 @@
 #define CDPCFG_RADIO_CHANNEL_4 912.0
 #define CDPCFG_RADIO_CHANNEL_5 911.0
 #define CDPCFG_RADIO_CHANNEL_6 910.0
+
+// Custom defines
+#define CDPCFG_OLED_NONE
+#define CDPCFG_WIFI_NONE
+#define CDPCFG_PIN_LORA_CS 0
+#define CDPCFG_PIN_LORA_RST 0
+#define CDPCFG_PIN_LORA_DIO0 0
+#define CDPCFG_PIN_LORA_DIO1 0
 
 #ifndef CDPCFG_OLED_CLASS
 #if defined(CDPCFG_OLED_NONE)

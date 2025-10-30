@@ -205,10 +205,10 @@ public:
     std::array<std::byte,4>().swap(muid);
     //std::array<byte,8>().swap(path);
     data.clear();
-    duckType = DuckType::UNKNOWN;
-    hopCount = 0;
-    topic = 0;
-    path_offset = 0;
+    duckType = std::byte{DuckType::UNKNOWN};
+    hopCount = std::byte{0};
+    topic = std::byte{0};
+    path_offset = std::byte{0};
     dcrc = 0;
   }
 

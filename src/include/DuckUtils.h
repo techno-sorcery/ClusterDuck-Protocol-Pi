@@ -14,13 +14,14 @@
 // #include "arduino-timer.h"
 // #include <Arduino.h>
 // #include <EEPROM.h>
+#include <stdint.h>
 #include <string>
 #include <vector>
 #include "../DuckError.h"
 
 namespace duckutils {
 
-extern Timer<> duckTimer;
+// extern Timer<> duckTimer;
 extern bool detectState;
 
 std::string getCDPVersion();
@@ -39,7 +40,7 @@ std::string toUpperCase(std::string str);
  * @param str the string to convert
  * @returns A vector of bytes.
  */
-std::vector<byte> stringToByteVector(const String& str);
+std::vector<std::byte> stringToByteVector(const std::string& str);
 
 /**
  * @brief Creates a byte array with random alpha numerical values.
@@ -47,7 +48,7 @@ std::vector<byte> stringToByteVector(const String& str);
  * @param length the array length
  * @param bytes array of bytes of the specified length
  */ 
-void getRandomBytes(int length, byte* bytes);
+void getRandomBytes(int length, std::byte* bytes);
 
 /**
  * @brief Create a uuid string.
@@ -64,7 +65,7 @@ std::string createUuid(int length = CDPCFG_UUID_LEN);
  * @param size the size of the array
  * @returns A string representating the by array in hexadecimal.
  */
-std::string convertToHex(byte* data, int size);
+std::string convertToHex(std::byte* data, int size);
 
 /**
  * @brief Convert a vector into an ASCII string.
@@ -119,8 +120,8 @@ std::string arrayToHexString(const std::array<T,S>& arr) {
     const char* cs = "0123456789ABCDEF";
     for (int i = 0; i < S; i++) {
         std::byte val = arr[i];
-        buf += cs[(val >> 4) & 0x0F];
-        buf += cs[val & 0x0F];
+        buf += cs[(int)((val >> 4) & std::byte{0x0F})];
+        buf += cs[(int)(val & std::byte{0x0F})];
     }
     return buf;
 }
@@ -156,14 +157,14 @@ bool isEqual(const std::vector<T> & a, const std::vector<T> & b) {
  * @param data byte array to convert
  * @returns a 32 bit unsigned integer.
  */
-uint32_t toUint32(const byte* data);
+uint32_t toUint32(const std::byte* data);
 
 /**
  * @brief Get a timer instance.
  * 
  * @returns A Timer instance.
  */
-Timer<> getTimer();
+// Timer<> getTimer();
 
 
 bool getDetectState();

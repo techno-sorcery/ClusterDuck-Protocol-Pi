@@ -9,7 +9,7 @@
 #include <string>
 
 
-bool DuckPacket::prepareForRelaying(BloomFilter *filter, std::vector<byte> dataBuffer) {
+bool DuckPacket::prepareForRelaying(BloomFilter *filter, std::vector<std::byte> dataBuffer) {
 
 
   this->reset();
@@ -47,8 +47,8 @@ void DuckPacket::getUniqueMessageId(BloomFilter * filter, std::array<uint8_t,MUI
 }
 
 int DuckPacket::prepareForSending(BloomFilter *filter,
-                                  std::array<byte,8> targetDevice, byte duckType,
-                                  byte topic, std::vector<byte> app_data) {
+                                  std::array<std::byte,8> targetDevice, std::byte duckType,
+                                  std::byte topic, std::vector<std::byte> app_data) {
 
   std::vector<uint8_t> encryptedData;
   uint8_t app_data_length = app_data.size();

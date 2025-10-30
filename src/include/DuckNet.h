@@ -22,8 +22,8 @@
 
 #include <map>
 #include "DuckUtils.h"
-#include "DuckError.h"
-#include "DuckLogger.h"
+#include "../DuckError.h"
+#include "../DuckLogger.h"
 #include <string>
 
 #include "DuckRadio.h"
@@ -103,7 +103,7 @@ public:
     return std::string("");
   }
 
-  void setDeviceId(std::vector<byte> deviceId) {
+  void setDeviceId(std::vector<std::byte> deviceId) {
     logwarn_ln("WARNING setDeviceId skipped, device has no WiFi.");
   }
 

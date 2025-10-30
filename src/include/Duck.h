@@ -35,7 +35,7 @@ public:
    * @param an 8 byte array
    * @return DUCK_ERR_NONE if successful, an error code otherwise 
    */
-  int setDeviceId(std::array<byte,8>& id);
+  int setDeviceId(std::array<std::byte,8>& id);
 
   /**
    * @brief Get the duck's unique ID.
@@ -58,8 +58,8 @@ public:
      * @param an 8 byte unique id
      * @return DUCK_ERR_NONE if successful, an error code otherwise
      */
-  [[deprecated("use setDeviceId(std::array<byte,8>& id) instead")]]
-  int setDeviceId(byte* id);
+  [[deprecated("use setDeviceId(std::array<std::byte,8>& id) instead")]]
+  int setDeviceId(std::byte* id);
   /**
    * @brief Setup serial connection.
    *
@@ -90,7 +90,7 @@ public:
    * 
    * @param syncWord set byte syncWord
    */
-  void setSyncWord(byte syncWord);
+  void setSyncWord(std::byte syncWord);
 
   /**
    * @brief Set radio channel to transmit and receive on.
@@ -147,8 +147,8 @@ public:
    * @param outgoingMuid Output parameter that returns the MUID of the sent packet. NULL is ignored.
    * @return DUCK_ERR_NONE if the data was send successfully, an error code otherwise. 
    */
-  int sendData(byte topic, const std::string data,
-    const std::array<byte,8> targetDevice = ZERO_DUID, std::array<byte,8> * outgoingMuid = NULL);
+  int sendData(std::byte topic, const std::string data,
+    const std::array<std::byte,8> targetDevice = ZERO_DUID, std::array<std::byte,8> * outgoingMuid = NULL);
 
   /**
    * @brief Sends data into the mesh network.
@@ -160,8 +160,8 @@ public:
    * @return DUCK_ERR_NONE if the data was send successfully, an error code
    otherwise.
    */
-  int sendData(byte topic, std::vector<byte>& bytes,
-    const std::array<byte,8> targetDevice = ZERO_DUID, std::array<byte,8> * outgoingMuid = NULL);
+  int sendData(std::byte topic, std::vector<std::byte>& bytes,
+    const std::array<std::byte,8> targetDevice = ZERO_DUID, std::array<std::byte,8> * outgoingMuid = NULL);
     
   /**
    * @brief Sends data into the mesh network.
@@ -174,8 +174,9 @@ public:
    * @return DUCK_ERR_NONE if the data was send successfully, an error code
    * otherwise.
    */
-  int sendData(byte topic, const byte* data, int length,
-    const std::array<byte,8> targetDevice = ZERO_DUID, std::array<byte,8> * outgoingMuid = NULL);
+  int sendData(std::byte topic, const std::byte* data, int length,
+
+    const std::array<std::byte,8> targetDevice = ZERO_DUID, std::array<std::byte,8> * outgoingMuid = NULL);
 
   /**
    * @brief Builds a CdpPacket with a specified muid.
@@ -187,8 +188,8 @@ public:
    * @param muid the muid that should be associated with this packet
    * @return a new CdpPacket
    * */
-  CdpPacket buildCdpPacket(byte topic, const std::vector<byte> data,
-    const std::array<byte,8> targetDevice, const std::array<byte,4> &muid);
+  CdpPacket buildCdpPacket(std::byte topic, const std::vector<std::byte> data,
+    const std::array<std::byte,8> targetDevice, const std::array<std::byte,4> &muid);
 
   /**
    * @brief Check wifi connection status
@@ -283,7 +284,7 @@ protected:
   Duck& operator=(Duck const&) = delete;
 
   std::string deviceId;
-  std::array<byte,8> duid;
+  std::array<std::byte,8> duid;
 
   DuckRadio& duckRadio = DuckRadio::getInstance();
 
@@ -292,7 +293,7 @@ protected:
 
   DuckPacket* txPacket = NULL;
   DuckPacket* rxPacket = NULL;
-  std::array<byte,4> lastMessageMuid;
+  std::array<std::byte,4> lastMessageMuid;
 
   BloomFilter filter;
 
@@ -330,7 +331,7 @@ protected:
    * The default implementation simply initializes the serial interface.
    * It can be overriden by each concrete Duck class implementation.
    */
-  virtual int setupWithDefaults(std::array<byte,8> deviceId, std::string ssid, std::string password) {
+  virtual int setupWithDefaults(std::array<std::byte,8> deviceId, std::string ssid, std::string password) {
     int err = setupSerial();
     if (err != DUCK_ERR_NONE) {
       return err;

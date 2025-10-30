@@ -5,6 +5,9 @@
 // #include "Arduino.h"
 #include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include<new>
 #define CDP_DEBUG
 #endif
 
@@ -49,7 +52,7 @@ static size_t cdpPrintf(const char *format, ...) {
         vsnprintf(buffer, len + 1, format, arg);
         va_end(arg);
     }
-    len = OUTPUT_PORT.write((const uint8_t*) buffer, len);
+    // len = OUTPUT_PORT.write((const uint8_t*) buffer, len);
     if (buffer != temp) {
         delete[] buffer;
     }

@@ -14,9 +14,9 @@
 #define DUCKDISPLAY_H_
 
 #include "include/cdpcfg.h"
-#include <Arduino.h>
 #include <vector>
 #include <string>
+#include <stdint.h>
 
 #ifndef CDPCFG_OLED_NONE
 #include <U8g2lib.h>
@@ -38,7 +38,7 @@ public:
    */
   static DuckDisplay* getInstance();
 #ifdef CDPCFG_OLED_NONE
-  void setupDisplay(int duckType, std::array<byte,8> name) {}
+  void setupDisplay(int duckType, std::array<std::byte,8> name) {}
   void powerSave(bool save) {}
   void drawString(uint8_t x, uint8_t y, const char* text) {}
   void drawString(bool cls, uint8_t x, uint8_t y, const char* text) {}
