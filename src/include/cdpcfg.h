@@ -23,6 +23,7 @@
 #endif
 
 // version definitions
+#define CDPCFG_WIFI_NONE
 #define CDP_VERSION_MAJOR  4
 #define CDP_VERSION_MINOR  4
 #define CDP_VERSION_PATCH  0

@@ -11,9 +11,9 @@
 #define DUCKUTILS_H_
 
 #include "cdpcfg.h"
-#include "arduino-timer.h"
-#include <Arduino.h>
-#include <EEPROM.h>
+// #include "arduino-timer.h"
+// #include <Arduino.h>
+// #include <EEPROM.h>
 #include <string>
 #include <vector>
 #include "../DuckError.h"
@@ -118,7 +118,7 @@ std::string arrayToHexString(const std::array<T,S>& arr) {
     buf.reserve(S * 2); // 2 digit hex
     const char* cs = "0123456789ABCDEF";
     for (int i = 0; i < S; i++) {
-        byte val = arr[i];
+        std::byte val = arr[i];
         buf += cs[(val >> 4) & 0x0F];
         buf += cs[val & 0x0F];
     }

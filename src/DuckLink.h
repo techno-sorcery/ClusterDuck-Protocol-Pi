@@ -1,7 +1,7 @@
 #ifndef DUCKLINK_H
 #define DUCKLINK_H
 
-#include <Arduino.h>
+// #include <Arduino.h>
 #include "include/Duck.h"
 
 class DuckLink : public Duck {
@@ -30,7 +30,7 @@ public:
    * 
    * @returns DUCK_ERR_NONE if setup is successfull, an error code otherwise.
    */
-  int setupWithDefaults(std::array<byte,8> deviceId, std::string ssid="", std::string password="");
+  int setupWithDefaults(std::array<std::byte,8> deviceId, std::string ssid="", std::string password="");
 
 
   /**
@@ -38,7 +38,7 @@ public:
    *
    * @returns the duck type defined as DuckType
    */
-  int getType() { return DuckType::LINK; }
+  int getType() override { return DuckType::LINK; }
 };
 
 #endif

@@ -13,7 +13,7 @@
 
 #pragma once
 
-#include <WString.h>
+// #include <WString.h>
 
 #include "cdpcfg.h"
 
@@ -259,11 +259,11 @@ private:
 
   DuckPacket* txPacket = NULL;
 
-  std::array<byte,8> deviceId;
+  std::array<std::byte,8> deviceId;
 
   BloomFilter *bloomFilter = nullptr;
 
-  static const byte DNS_PORT;
+  static const std::byte DNS_PORT;
   static const char* DNS;
   static const char* AP;
   std::string portal = "";

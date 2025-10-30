@@ -1,12 +1,13 @@
 #ifndef CDPPACKET_H_
 #define CDPPACKET_H_
 
-#include "Arduino.h"
+// #include "Arduino.h"
 #include "include/DuckUtils.h"
 #include "DuckLogger.h"
 #include "include/DuckTypes.h"
 #include <string>
 #include <array>
+#include <stdint.h>
 
 #define MAX_HOPS 6
 
@@ -141,29 +142,29 @@ DCRC:      04  byte value          - Data section CRC
 DATA:      229 byte array          - Data payload (e.g sensor read, text,...)
 */
 
-typedef std::array<byte,8> Duid;
-typedef std::array<byte,4> Muid;
+typedef std::array<std::byte,8> Duid;
+typedef std::array<std::byte,4> Muid;
 
 class CdpPacket {
 public:
   /// Source Device UID (8 bytes)
-  std::array<byte,8> sduid;
+  std::array<std::byte,8> sduid;
   /// Destination Device UID (8 bytes)
-  std::array<byte,8> dduid;
+  std::array<std::byte,8> dduid;
   /// Message UID (4 bytes)
-  std::array<byte,4> muid;
+  std::array<std::byte,4> muid;
   /// Message topic (1 byte)
-  byte topic;
+  std::byte topic;
   /// Offset to the Path section (1 byte)
-  byte path_offset;
+  std::byte path_offset;
   /// Type of ducks as define in DuckTypes.h
-  byte duckType;
+  std::byte duckType;
   /// Number of times a packet was relayed in the mesh
-  byte hopCount;
+  std::byte hopCount;
   /// crc32 for the data section
   uint32_t dcrc;
   /// Data section
-  std::vector<byte> data;
+  std::vector<std::byte> data;
   /// Path section (48 bytes max)
   //std::array<byte,48> path;
   //time received
@@ -172,7 +173,7 @@ public:
   CdpPacket() {
     reset();
   }
-  CdpPacket(const std::vector<byte> & buffer) {
+  CdpPacket(const std::vector<std::byte> & buffer) {
       int buffer_length = buffer.size();
       // sduid
       std::copy(&buffer[SDUID_POS], &buffer[DDUID_POS], sduid.begin());
@@ -200,8 +201,8 @@ public:
    *
    */
   void reset() {
-    std::array<byte,8>().swap(sduid);
-    std::array<byte,4>().swap(muid);
+    std::array<std::byte,8>().swap(sduid);
+    std::array<std::byte,4>().swap(muid);
     //std::array<byte,8>().swap(path);
     data.clear();
     duckType = DuckType::UNKNOWN;
