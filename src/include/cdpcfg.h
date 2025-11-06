@@ -25,6 +25,10 @@
 // Custom defines
 #define CDPCFG_WIFI_NONE
 #define CDPCFG_OLED_NONE
+#define CDPCFG_PIN_LORA_CS 0
+#define CDPCFG_PIN_LORA_RST 0
+#define CDPCFG_PIN_LORA_DIO0 0
+#define CDPCFG_PIN_LORA_DIO1 0
 
 // version definitions
 #define CDP_VERSION_MAJOR  4

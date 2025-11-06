@@ -5,6 +5,8 @@
 // #include "Arduino.h"
 #include "compat.h"
 #include <vector>
+#include <cstdarg>
+#include <iostream>
 
 #define CDP_DEBUG
 #endif
@@ -29,7 +31,7 @@
 #if defined(ARDUINO)
 #define OUTPUT_PORT Serial
 #else
-#define PORT std::cout
+#define OUTPUT_PORT std::cout
 #endif
 
 

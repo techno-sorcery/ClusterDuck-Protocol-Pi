@@ -10,6 +10,11 @@ using byte    = std::uint8_t;   // <- the key one
 using boolean = bool;
 using String  = std::string;
 
-class .
+template<typename T = uint32_t>
+class Timer {
+    public:
+        Timer() {}
+};
+
 
 #endif
