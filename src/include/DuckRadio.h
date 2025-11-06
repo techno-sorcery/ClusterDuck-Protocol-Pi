@@ -11,7 +11,8 @@
 #ifndef DUCKLORA_H_
 #define DUCKLORA_H_
 
-#include <Arduino.h>
+// #include <Arduino.h>
+#include <compat.h>
 
 #include "../DuckDisplay.h"
 #include "../DuckError.h"

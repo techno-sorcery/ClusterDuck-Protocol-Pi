@@ -1,7 +1,8 @@
 #ifndef DUCKDETECT_H
 #define DUCKDETECT_H
 
-#include <Arduino.h>
+// #include <Arduino.h>
+#include <compat.h>
 
 #include "include/Duck.h"
 #include "include/cdpcfg.h"

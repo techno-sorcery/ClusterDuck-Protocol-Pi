@@ -11,10 +11,11 @@
 #define DUCKUTILS_H_
 
 #include "cdpcfg.h"
-#include "arduino-timer.h"
-#include <Arduino.h>
-#include <EEPROM.h>
-#include <string>
+//#include "arduino-timer.h"
+//#include <Arduino.h>
+#include <compat.h>
+//#include <EEPROM.h>
+#include <string.h>
 #include <vector>
 #include "../DuckError.h"
 

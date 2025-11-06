@@ -22,6 +22,10 @@
 #include "boards/ttgo_t_beam_v1_sx1276.h"
 #endif
 
+// Custom defines
+#define CDPCFG_WIFI_NONE
+#define CDPCFG_OLED_NONE
+
 // version definitions
 #define CDP_VERSION_MAJOR  4
 #define CDP_VERSION_MINOR  4

@@ -2,9 +2,8 @@
 #define PAPADUCK_H
 
 // #include <Arduino.h>
-// #include <arduino-timer.h>
+#include <arduino-timer.h>
 #include "include/Duck.h"
-#include "include/cdpcfg.h"
 
 class PapaDuck : public Duck {
 public:

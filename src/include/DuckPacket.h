@@ -1,13 +1,19 @@
 #ifndef DUCKPACKET_H_
 #define DUCKPACKET_H_
 
+#include "../compat.h"
+
 #include "../CdpPacket.h"
-#include "Arduino.h"
+//#include "Arduino.h"
 #include "DuckUtils.h"
 #include "cdpcfg.h"
 #include "bloomfilter.h"
-#include <CRC32.h>
+// #include <CRC32.h>
+#include <zlib.h>
 #include <array>
+
+// typedef uint8_t byte
+
 
 /**
  * @brief Use this DUID to send to all PapaDucks

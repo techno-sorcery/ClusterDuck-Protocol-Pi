@@ -13,7 +13,7 @@
 
 #pragma once
 
-#include <WString.h>
+// #include <WString.h>
 
 #include "cdpcfg.h"
 
@@ -22,8 +22,8 @@
 
 #include <map>
 #include "DuckUtils.h"
-#include "DuckError.h"
-#include "DuckLogger.h"
+#include "../DuckError.h"
+#include "../DuckLogger.h"
 #include <string>
 
 #include "DuckRadio.h"

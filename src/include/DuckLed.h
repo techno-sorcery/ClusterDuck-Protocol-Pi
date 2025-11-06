@@ -11,7 +11,8 @@
 #define DUCKLED_H_
 
 #include "cdpcfg.h"
-#include <Arduino.h>
+//#include <Arduino.h>
+#include <compat.h>
 
 /**
  * @brief Internal on board LED abstraction.

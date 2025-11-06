@@ -14,7 +14,7 @@
 #define DUCKDISPLAY_H_
 
 #include "include/cdpcfg.h"
-#include <Arduino.h>
+// #include <Arduino.h>
 #include <vector>
 #include <string>
 

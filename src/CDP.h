@@ -13,6 +13,8 @@
 #include "cdp_external_board.h"
 #endif
 
+#include "compat.h"
+
 #include "include/cdpcfg.h"
 #include "DuckDetect.h"
 #include "DuckLink.h"
