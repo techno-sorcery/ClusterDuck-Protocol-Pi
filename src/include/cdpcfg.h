@@ -29,6 +29,7 @@
 #define CDPCFG_PIN_LORA_RST 0
 #define CDPCFG_PIN_LORA_DIO0 0
 #define CDPCFG_PIN_LORA_DIO1 0
+#define CDP_BOARD_NAME "RPI 5"
 
 // version definitions
 #define CDP_VERSION_MAJOR  4
