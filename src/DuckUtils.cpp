@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <sstream>
 #include <string>
+#include <random>
 
 #include "DuckLogger.h"
 
@@ -26,6 +27,10 @@ bool flipDetectState() {
 void  getRandomBytes(int length, byte* bytes) {
   const char* digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   int i;
+
+  
+
+
   for (i = 0; i < length; i++) {
     //TODO: Random generator here isn't seeded properly
     //We can use RSSI value to seed it or use a frame counter if available
