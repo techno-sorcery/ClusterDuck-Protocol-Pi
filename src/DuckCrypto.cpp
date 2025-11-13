@@ -1,7 +1,7 @@
 #include "include/DuckCrypto.h"
 #include "include/DuckUtils.h"
 
-#include "Crypto.h"
+#include <cryptopp>
 #include "../../Crypto/src/AES.h" // some builds can't find this file so we need explicit path
 #include "CTR.h"
 

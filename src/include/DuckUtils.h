@@ -21,7 +21,7 @@
 
 namespace duckutils {
 
-extern Timer<> duckTimer;
+// extern Timer<> duckTimer;
 extern bool detectState;
 
 std::string getCDPVersion();
@@ -164,7 +164,7 @@ uint32_t toUint32(const byte* data);
  * 
  * @returns A Timer instance.
  */
-Timer<> getTimer();
+// Timer<> getTimer();
 
 
 bool getDetectState();

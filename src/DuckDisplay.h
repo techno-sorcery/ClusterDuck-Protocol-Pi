@@ -15,8 +15,10 @@
 
 #include "include/cdpcfg.h"
 // #include <Arduino.h>
+#include "compat.h"
 #include <vector>
 #include <string>
+#include <array>
 
 #ifndef CDPCFG_OLED_NONE
 #include <U8g2lib.h>
